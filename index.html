@@ -17,10 +17,18 @@
     .left {
         float: left;
         width: 50%;
+        @media screen and (max-width: 480px) {
+            width: 100%;
+        }
     }
     .right {
         float: right;
         width: 40%;
+        @media screen and (max-width: 480px) {
+            float: left;
+            width: 100%;
+        }
+
     }
     #desktopcereal {
         font-size: 8px;
