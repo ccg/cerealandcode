@@ -90,32 +90,25 @@ input {
     -webkit-border-radius: 5px;
     border-radius: 5px;
 }
+
+span.strike {
+    text-decoration: line-through;
+}
+
 div#whythefuckdoibotherwiththiscrap {
     padding-left: 0px;
 }
+
 div#whythefuckdoibotherwiththiscrap div {
     padding: 0px;
     margin: 0px;
 
 }
+
 input[type=submit]:hover {
     background-color: #32FF17;
     color: black;
 }
-
-input::-webkit-input-placeholder {
-    color: #32FF17;
-}
-input:-moz-placeholder {
-    color: #32FF17;
-}
-input:-ms-input-placeholder {
-    color: #32FF17;
-}
-
-
-
-
 
 #prompt {
     float: left;
@@ -147,11 +140,6 @@ float: left;
     background: #21f838;
 }
 
-input#ommand {
-    width: 0;
-    height: 0;
-    opacity: 0;
-}
 input#command {
     margin-left:-9999px;
     /*
@@ -159,6 +147,10 @@ input#command {
     top: 0;
     left: 0;
     */
+}
+
+img.full-width {
+    width: 100%;
 }
 
 .clearfix:after {
