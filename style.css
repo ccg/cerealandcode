@@ -63,9 +63,23 @@ strong {
     }
 }
 
-p.scrunched {
-    line-height: 0.3em;
+div#details {
+    padding: 0px;
 }
+div#details div {
+    padding: 0px;
+}
+div.detailkey, div.detailvalue {
+    float: left;
+}
+div.detailkey {
+    width: 30%;
+    clear: both;
+}
+div.detailvalue {
+    width: 70%;
+}
+
 input {
     padding: 5px;
     border: 1px solid #32FF17;
