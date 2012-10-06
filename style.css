@@ -22,6 +22,7 @@ strong {
     text-decoration: underline;
 }
 
+.center { text-align: center;}
 .left {
     float: left;
     width: 50%;
