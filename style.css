@@ -1,0 +1,176 @@
+BODY {
+    font-family: monospace, Courier;
+    color: #32FF17;
+    background-color: #000000;
+    font-size: 14px;
+    padding: 0px;
+    margin: 0px;
+}
+a {
+    color: #32FF17;
+}
+div {
+    margin: 0;
+    padding: 2%;
+}
+h2 {
+    color: white;
+    margin-top: 1.6em;
+}
+
+.left {
+    float: left;
+    width: 50%;
+}
+.right {
+    float: right;
+    width: 42%;
+}
+#title {
+    margin-bottom: -5%;
+}
+#desktopcereal {
+    font-size: 8px;
+}
+#mobilecereal {
+    display: none;
+}
+#description {
+}
+@media screen and (max-width: 480px) {
+    .left, .right {
+        width: 94%;
+    }
+    .right {
+        float: left;
+    }
+}
+@media screen and (max-width: 1152px) {
+    #desktopcereal {
+        display: none;
+    }
+    #mobilecereal {
+        display: block;
+    }
+}
+
+input {
+    padding: 5px;
+    border: 1px solid #32FF17;
+    color: #32FF17;
+
+    width:200px;
+    background-color: black;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+div#whythefuckdoibotherwiththiscrap {
+    padding-left: 0px;
+}
+div#whythefuckdoibotherwiththiscrap div {
+    padding: 0px;
+    margin: 0px;
+
+}
+input[type=submit]:hover {
+    background-color: #32FF17;
+    color: black;
+}
+
+input::-webkit-input-placeholder {
+    color: #32FF17;
+}
+input:-moz-placeholder {
+    color: #32FF17;
+}
+input:-ms-input-placeholder {
+    color: #32FF17;
+}
+
+
+
+
+
+#prompt {
+    float: left;
+    padding-left: 0px;
+}
+
+#cmd {
+    font-family: courier;
+    font-size: 14px;
+    background: black;
+    color: #21f838;
+    padding: 5px;
+    overflow: hidden;
+float: left;
+}
+
+#cmd span {
+    float: left;
+    padding-left: 3px;
+    white-space: pre;
+}
+
+#cursor {
+    float: left;
+    width: 12px;
+    height: 16px;
+    padding: 0px;
+    margin-left: 3px !important;
+    background: #21f838;
+}
+
+input#ommand {
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+.clearfix { display: inline-block;}
+
+
+
+
+
+#footer {
+    height: 76px;
+    width: 1503px;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+}
+#footercontainer {
+    padding: 0px;
+    margin: 0px;
+    height: 76px;
+    width: 100%;
+    overflow: hidden;
+
+
+}
+
+#footer img {
+    display: block;
+    float:left;
+    height: 70px;
+    margin: 0px;
+    padding-top: 3px;
+
+}
+#eventbritelogo {
+    vertical-align: middle;
+}
+
+#footer {
+    clear: both;
+    border-top: 1px solid #32FF17;
+}

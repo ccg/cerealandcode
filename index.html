@@ -1,217 +1,247 @@
-<html><head>
-<title>Glassgiant.com - JPEG / JPG Picture to ASCII Art Generator</title>
-<style>
-    BODY {
-        font-family: monospace, Courier;
-        color: #32FF17;
-        background-color: #000000;
-        font-size: 14px;
-    }
-    a {
-        color: #32FF17;
-    }
-    div {
-        margin: 0;
-        padding: 2em 1em 0em;
-    }
-    .left {
-        float: left;
-        width: 50%;
-        @media screen and (max-width: 480px) {
-            width: 100%;
-        }
-    }
-    .right {
-        float: right;
-        width: 40%;
-        @media screen and (max-width: 480px) {
-            float: left;
-            width: 100%;
-        }
+<html>
+<head>
+    <title>Grown Up Nerd Saturday Mornings | Cereal & Code</title>
 
-    }
-    #desktopcereal {
-        font-size: 8px;
-        @media screen and (max-width: 480px) {
-            display: none;
-        }
-    }
-    #mobilecereal {
-        display: none;
-        @media screen and (max-width: 480px) {
-            display: block;
-        }
-    }
-    #description {
-    }
-    h1, h2 {
-        color: white;
-    }
-    #eventbritelogo {
-        vertical-align: middle;
-    }
+    <link type="text/css" rel="stylesheet" href="chrome-extension://cpgiohpgnekmcmeenadepdlppklpkckn/style.css">
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    
+    <script>
+        //http://stackoverflow.com/questions/3758023/how-to-use-this-square-cursor-in-a-html-input-field
+        $(function() {
 
-</style>
+        var cursor;
 
-<link type="text/css" rel="stylesheet" href="chrome-extension://cpgiohpgnekmcmeenadepdlppklpkckn/style.css"></head>
+        $('form').click(function() {
+           $('input#command').focus();
+        });
+       $('input#command').focus();
+
+        cursor = window.setInterval(function() {
+          if ($('#cursor').css('visibility') === 'visible') {
+           $('#cursor').css({ visibility: 'hidden' });
+          } else {
+           $('#cursor').css({ visibility: 'visible' });  
+          }  
+        }, 500);
+
+        $('input').keyup(function() {
+          $('#cmd span').text($(this).val());
+
+        });
+
+        $('input').blur(function() {
+             // clearInterval(cursor);
+             $('#cursor').css({ visibility: 'visible' });    
+          });
+
+        });
+    </script>
+
+
+</head>
 <body>
+
+<div class="right" id="title">
+    <h1>Cereal & Code</h1>
+</div><!-- .right -->
+
 <div id="mobilecereal" class="left">
-<img src="http://thepumpblog.com/wp-content/uploads/2011/01/Fruit-Loops-Cereal_500px.jpg" />
-</div>
+    <img src="http://thepumpblog.com/wp-content/uploads/2011/01/Fruit-Loops-Cereal_500px.jpg" width="100%" />
+</div><!-- #mobilecereal .left -->
 
 <div id="desktopcereal" class="left">
 <font>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;++++=77&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;777&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7777&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;77+=I?I?I??7&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;77+7+~===+IIIII?+=~=~&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7~??IIII7777,&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;I~~+I7777777777777777777777777I77?=7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7=??IIII777?77&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7:II7777777777777777777777777777777777I7777+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7~I?III77777:~7&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7=?777777777777777777777777777777777777777777777777I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~I?III77777I+7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?~I777777777777777777777777777777777777777777777777777777?77&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I+?II7777II?7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;=I777777777777777777777777IIIIIIIIIIIII77777777777777777777777I7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;??II7I+7?:77&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?77III7777777777777IIIII??+=~~=++++?++IIII777IIII777777777777777777=77+?II7~~:77&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?I7I7IIII77777777IIIII?++++~~~~~~~~::::~=++++++++??IIIIII77777777777777I+II7I7:7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+I77I77IIII77I77IIII+===~+=~~,:,~~:~::::~:::~~==~:~==+++???III7777777777III77I:777&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7+777I7IIIIII77II??++~==~::~~:~~=~=~~~~:::~::::~~:::~=======+????I777777?III77I:~777&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7~77III7II77I777I??=~~~~====,:~:~=~::::~~::~~::,,:::~::::~~~~~=+==??IIIII??II7+:=?II77&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=?7IIIIII77IIIII??+~:::~=~=~~~~::~=~::~~=+~~~~~~::::,~~~~~:~~~~+==:~=+?I???I7II,=II77II7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;77~77IIIIIIIII7III??==::~~~~~,::::~~=~~==~:~~~~~=~~=~~~~=~~~~==~~~===::+++??III~+~?I777777777&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~7IIIIIIIIIIIIII?==~~~~~=~~~~:,,:~=~~~~~:~~~~~~:::~::~~~~==~:::~~~====+=+??I==?=III7777777I=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~7IIIIIIIIIII????+~~~~~~===~~~~~=~~~~~~~::~~=~~:::::,==~:~~~::~~~:,::~~~=???:+:=?III777777777~7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7=7IIIIIIIIIIIII+=~~~~~~~=~~==~===~::,:::~=~~~~~==~:~~~~~~,::~~~~~~:::~~=~?I=~~:+??II7777777777I=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7=IIIIIIIIIIII?++==:,:~~~~:~~~~~~~:~~~~::::::::~~~=:~~~~:~::~~===~~~~,:~~~===+~~===+??II7777777777~&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7~I7IIIIIIIII???+==::=~~::~:~:::~:::~=~::::::::::~~~~~~~::~~~==~~~~~~~::~~==~:~==~~===?III777777777I7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I7IIIIIIIII???==~:::::~=~:~~~::~:~~:,,::::::::~~~~===~=~:~::~~~:~=~::~=~:~~:::::~:==~=?II7777777777I7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;77?7IIIIIIIIII?I+=~:~::~~=~~~~~~~=::::~::,,:::::::~~==~~~~~:::::~~=~~:::~=:,,:~:,::::::~==?II7777777777+77&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;7:77IIIIIIIII???=~~~~~~~~:~~~~:::~::~~:,::::::~~~:~~:~:::~~::~::~:~~:~~~~~=====~:::,,,::~~+??II77777777I7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;7+7IIIIIIIII??+++~~~~==~~~::::~==~~~::,:::::::~~::~~::~=:,::~:=::~~::,:~~~~::::~~====~:,:~~++?I777777777?7&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;7:77IIIIIIIII?++=~:~~~==~~~:~:~::::~~::~~~~~::::::::,,,:=~:~~~~::::::,:~~::::::~:===~::~::~:==++I77777777II&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;~77IIIIIIII??+==~~==++~~~~~~~:~~~~~::~~:~~~:::~:::::~~::::~~:~=~~~~,::~:~~==~~~~~==~:~~~:~~~==+I77777777I~7&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;77+IIIIIIIIII?++=~~~~=+~~~~~~~~~~~~:~~~=~~~~~:::,,::,::::,,:~~~=~,:~~~,,:~~~~==~=~~:~:,,:::~~:==?I777777777+7&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;II7IIIIIIIII?++~~===+===~:::~::~~~~~~~~=~~~~~~:::~:~~,::::,,,:~~,,:~=~~~~~~~===~:~:::,~~~~~=~~=II777777777?77&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;II7IIIIIIII?+++==~=+==~,:~~~~~:::~::~~~~~~~~~::::,:~::::::::~:::::~~~~~~~~::~~~::=~~:~===~:~~=+II777777777I77&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;?I7IIIIIIII?+=~:~~~===~:~~::~~:::::~:~~~~::~~~=~:~~:,::::,::~:,,::::~~:::~~:~~::===+~~~=~:::~==II777777777?&nbsp;77&nbsp;<br />
-&nbsp;&nbsp;7II7IIIIIIII?+=~::~==~:::::::~:::::~~~~~~~:~~::=~::::::::,~::::~=~:::~=~::::,::~~=====~::::~~===?I77777777I?777&nbsp;<br />
-&nbsp;&nbsp;&nbsp;?I7IIIIIIII++=~::~~~:,:::::::::~::,::~::,:~~:~~::~~~~~:::::~:~~:::::::::,,,,,,:::~~~~::~:::~==+?II7777777I+&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;7I+IIIIIIIII++=:~~~+~~~:=::~~~~~~~~::,~:~~~::::,::~~~~~~~~~~~~~:::~:~~~,.,:::,~,::::~:~~~~~==+=+?+I7777777I~&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;~IIIIIIIIII+=~::~~~~~~:~~~~~~:::~:::::,:::,::::::~~~~~~~:::~~::~~,,,~~~~:::::::~:::::~~=~====++?I7777777?7&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;~I7IIIIIIII?==:~~===~=~~~~::~~~:~:::,::::,,,,::::::::~~~~~:~:,:,=::=~:~=::~~~~~~~~~~~:~~~=~=+++II777777I?7&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;++IIIIIIIIII?+=::~======~~::::~:::~:,:~~:::::::::::~~:::~~:~~~~:~~~:::::::~~.,,~::::::~~~==~+?II7777777I77&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;7~IIIIIIIIII?==~:~~~+==~~==~~::::~::~~::~~~~::::::::::~~::=~~~:~~~:,,:::::~~~~~::::~~~~~~==??I77777777I+7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;7?+I7IIIIIIII?=~~~~==~:~~==~~::~~~~:~~:~~::::~:~~:~~:~=~~~::,:~~~=~=:~::,,,:~~::~~~~:~::==??I77777777II777&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7+I7IIIIIIIII=~~~:~~~~~=~~~~:~~~:::~~::~~:::~::::~~~~:::::~~::::~~~~=:::::,:~~::~:~~::===+I777777777I=7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7~IIIIIIIIII?+===~~=~:::~=~~::~::::::~:::~::,:==~:::,:::,::::~=~=~~~~~~,::~~:~~~::~===+?I777777777I+7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7=I7IIIIIIIII?+======~=~~~:::::~~:::~~:,:::~~~:,,:::::~:~==:==~::::::~::::~=~~==~==+III777777777I+7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;77=IIIIIIIIII?++===~==+~~:::~~~~~~~~::=~~~~~:~:::::,:~~~~~~~~::::::::,:~~~:~=+====??I7777777777I+7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;7=IIIIIIIIIII++===~~===~:~:~~==:~==~~~~===~~~::~~~~~=~==~~::~:~::::::~~~~:~+~~==II777777777I?+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7~IIIIIIIIIIII?=++~::::~~~~~=====~~:~:~~:::,::~~~~~~~=:~~~::::~~:~~~=~=~~====+I7777777777I?~7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7,?I7IIIIIIIII?++==:::~~~~~~~==++=~~~~~~=~~::~:::=~~~~~:::~~~~~~:~=~~~=++===I7777777777I?,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7=II7IIIIIIIII+===~~=~~~~~::==~~:~=~~~~~=~~~~====~~~:,,:~:~=~~~~~~~~====+I777777777I?=777&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7,?I7IIIII7IIII+=~==~====~:::::~~==~~==~~~=~~==~~~::~~~~~~====+===~=?III77777777I?+,77&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7~?IIIIIII77III+====~~~~~~:::::~~~~~~::~~~~~~::~~~~~~~~==~======I77777777777I?+:77&nbsp;7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;77=?I777IIIIIIII?+==~~~~=~~~=~~~:::,,::::~~~~~==~~~===~~~=+++?I7777777777I?+:7&nbsp;7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7,+?II7IIIIIIIIIIII?++====~~======~~=~:~~===~~~~~=~~~+IIIIII777777777I?+:7&nbsp;&nbsp;7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;77=?IIIIIII7I7III7I77II????++++++=+========+++III777777777777777I??=,7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;77,+?IIIIII777777777777777IIII?II???I7777777777777777777777I??+:77&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;77.=??III7777777777777777777777777777777777777777777I??+=,77&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;77:+??III777777777777777777777777777777777II???+=:77&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;777,~++?I7IIIII7777777777777777IIII????+=:.777&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;77&nbsp;&nbsp;77,~=+++?????????????????+++=~:,777&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;77777,.,....:777&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;++++=77&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;777&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7777&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;77+=I?I?I??7&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;77+7+~===+IIIII?+=~=~&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7~??IIII7777,&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;I~~+I7777777777777777777777777I77?=7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7=??IIII777?77&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7:II7777777777777777777777777777777777I7777+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7~I?III77777:~7&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7=?777777777777777777777777777777777777777777777777I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~I?III77777I+7&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?~I777777777777777777777777777777777777777777777777777777?77&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I+?II7777II?7&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;=I777777777777777777777777IIIIIIIIIIIII77777777777777777777777I7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;??II7I+7?:77&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?77III7777777777777IIIII??+=~~=++++?++IIII777IIII777777777777777777=77+?II7~~:77&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?I7I7IIII77777777IIIII?++++~~~~~~~~::::~=++++++++??IIIIII77777777777777I+II7I7:7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+I77I77IIII77I77IIII+===~+=~~,:,~~:~::::~:::~~==~:~==+++???III7777777777III77I:777&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7+777I7IIIIII77II??++~==~::~~:~~=~=~~~~:::~::::~~:::~=======+????I777777?III77I:~777&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7~77III7II77I777I??=~~~~====,:~:~=~::::~~::~~::,,:::~::::~~~~~=+==??IIIII??II7+:=?II77&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=?7IIIIII77IIIII??+~:::~=~=~~~~::~=~::~~=+~~~~~~::::,~~~~~:~~~~+==:~=+?I???I7II,=II77II7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;77~77IIIIIIIII7III??==::~~~~~,::::~~=~~==~:~~~~~=~~=~~~~=~~~~==~~~===::+++??III~+~?I777777777&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~7IIIIIIIIIIIIII?==~~~~~=~~~~:,,:~=~~~~~:~~~~~~:::~::~~~~==~:::~~~====+=+??I==?=III7777777I=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~7IIIIIIIIIII????+~~~~~~===~~~~~=~~~~~~~::~~=~~:::::,==~:~~~::~~~:,::~~~=???:+:=?III777777777~7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7=7IIIIIIIIIIIII+=~~~~~~~=~~==~===~::,:::~=~~~~~==~:~~~~~~,::~~~~~~:::~~=~?I=~~:+??II7777777777I=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7=IIIIIIIIIIII?++==:,:~~~~:~~~~~~~:~~~~::::::::~~~=:~~~~:~::~~===~~~~,:~~~===+~~===+??II7777777777~&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7~I7IIIIIIIII???+==::=~~::~:~:::~:::~=~::::::::::~~~~~~~::~~~==~~~~~~~::~~==~:~==~~===?III777777777I7&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I7IIIIIIIII???==~:::::~=~:~~~::~:~~:,,::::::::~~~~===~=~:~::~~~:~=~::~=~:~~:::::~:==~=?II7777777777I7&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;77?7IIIIIIIIII?I+=~:~::~~=~~~~~~~=::::~::,,:::::::~~==~~~~~:::::~~=~~:::~=:,,:~:,::::::~==?II7777777777+77&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;7:77IIIIIIIII???=~~~~~~~~:~~~~:::~::~~:,::::::~~~:~~:~:::~~::~::~:~~:~~~~~=====~:::,,,::~~+??II77777777I7&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;7+7IIIIIIIII??+++~~~~==~~~::::~==~~~::,:::::::~~::~~::~=:,::~:=::~~::,:~~~~::::~~====~:,:~~++?I777777777?7&nbsp;<br />
+&nbsp;&nbsp;&nbsp;7:77IIIIIIIII?++=~:~~~==~~~:~:~::::~~::~~~~~::::::::,,,:=~:~~~~::::::,:~~::::::~:===~::~::~:==++I77777777II&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;~77IIIIIIII??+==~~==++~~~~~~~:~~~~~::~~:~~~:::~:::::~~::::~~:~=~~~~,::~:~~==~~~~~==~:~~~:~~~==+I77777777I~7<br />
+&nbsp;&nbsp;77+IIIIIIIIII?++=~~~~=+~~~~~~~~~~~~:~~~=~~~~~:::,,::,::::,,:~~~=~,:~~~,,:~~~~==~=~~:~:,,:::~~:==?I777777777+7<br />
+&nbsp;&nbsp;&nbsp;II7IIIIIIIII?++~~===+===~:::~::~~~~~~~~=~~~~~~:::~:~~,::::,,,:~~,,:~=~~~~~~~===~:~:::,~~~~~=~~=II777777777?77<br />
+&nbsp;&nbsp;&nbsp;II7IIIIIIII?+++==~=+==~,:~~~~~:::~::~~~~~~~~~::::,:~::::::::~:::::~~~~~~~~::~~~::=~~:~===~:~~=+II777777777I77<br />
+&nbsp;&nbsp;&nbsp;?I7IIIIIIII?+=~:~~~===~:~~::~~:::::~:~~~~::~~~=~:~~:,::::,::~:,,::::~~:::~~:~~::===+~~~=~:::~==II777777777?&nbsp;77<br />
+&nbsp;&nbsp;7II7IIIIIIII?+=~::~==~:::::::~:::::~~~~~~~:~~::=~::::::::,~::::~=~:::~=~::::,::~~=====~::::~~===?I77777777I?777<br />
+&nbsp;&nbsp;&nbsp;?I7IIIIIIII++=~::~~~:,:::::::::~::,::~::,:~~:~~::~~~~~:::::~:~~:::::::::,,,,,,:::~~~~::~:::~==+?II7777777I+&nbsp;<br />
+&nbsp;&nbsp;7I+IIIIIIIII++=:~~~+~~~:=::~~~~~~~~::,~:~~~::::,::~~~~~~~~~~~~~:::~:~~~,.,:::,~,::::~:~~~~~==+=+?+I7777777I~&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;~IIIIIIIIII+=~::~~~~~~:~~~~~~:::~:::::,:::,::::::~~~~~~~:::~~::~~,,,~~~~:::::::~:::::~~=~====++?I7777777?7&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;~I7IIIIIIII?==:~~===~=~~~~::~~~:~:::,::::,,,,::::::::~~~~~:~:,:,=::=~:~=::~~~~~~~~~~~:~~~=~=+++II777777I?7&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;++IIIIIIIIII?+=::~======~~::::~:::~:,:~~:::::::::::~~:::~~:~~~~:~~~:::::::~~.,,~::::::~~~==~+?II7777777I77&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;7~IIIIIIIIII?==~:~~~+==~~==~~::::~::~~::~~~~::::::::::~~::=~~~:~~~:,,:::::~~~~~::::~~~~~~==??I77777777I+7&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;7?+I7IIIIIIII?=~~~~==~:~~==~~::~~~~:~~:~~::::~:~~:~~:~=~~~::,:~~~=~=:~::,,,:~~::~~~~:~::==??I77777777II777&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7+I7IIIIIIIII=~~~:~~~~~=~~~~:~~~:::~~::~~:::~::::~~~~:::::~~::::~~~~=:::::,:~~::~:~~::===+I777777777I=7&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7~IIIIIIIIII?+===~~=~:::~=~~::~::::::~:::~::,:==~:::,:::,::::~=~=~~~~~~,::~~:~~~::~===+?I777777777I+7&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7=I7IIIIIIIII?+======~=~~~:::::~~:::~~:,:::~~~:,,:::::~:~==:==~::::::~::::~=~~==~==+III777777777I+7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;77=IIIIIIIIII?++===~==+~~:::~~~~~~~~::=~~~~~:~:::::,:~~~~~~~~::::::::,:~~~:~=+====??I7777777777I+7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;7=IIIIIIIIIII++===~~===~:~:~~==:~==~~~~===~~~::~~~~~=~==~~::~:~::::::~~~~:~+~~==II777777777I?+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7~IIIIIIIIIIII?=++~::::~~~~~=====~~:~:~~:::,::~~~~~~~=:~~~::::~~:~~~=~=~~====+I7777777777I?~7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7,?I7IIIIIIIII?++==:::~~~~~~~==++=~~~~~~=~~::~:::=~~~~~:::~~~~~~:~=~~~=++===I7777777777I?,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7=II7IIIIIIIII+===~~=~~~~~::==~~:~=~~~~~=~~~~====~~~:,,:~:~=~~~~~~~~====+I777777777I?=777&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7,?I7IIIII7IIII+=~==~====~:::::~~==~~==~~~=~~==~~~::~~~~~~====+===~=?III77777777I?+,77&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7~?IIIIIII77III+====~~~~~~:::::~~~~~~::~~~~~~::~~~~~~~~==~======I77777777777I?+:77&nbsp;7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;77=?I777IIIIIIII?+==~~~~=~~~=~~~:::,,::::~~~~~==~~~===~~~=+++?I7777777777I?+:7&nbsp;7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7,+?II7IIIIIIIIIIII?++====~~======~~=~:~~===~~~~~=~~~+IIIIII777777777I?+:7&nbsp;&nbsp;7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;77=?IIIIIII7I7III7I77II????++++++=+========+++III777777777777777I??=,7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;77,+?IIIIII777777777777777IIII?II???I7777777777777777777777I??+:77&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;77.=??III7777777777777777777777777777777777777777777I??+=,77&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;77:+??III777777777777777777777777777777777II???+=:77&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;777,~++?I7IIIII7777777777777777IIII????+=:.777&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;77&nbsp;&nbsp;77,~=+++?????????????????+++=~:,777&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;77777,.,....:777&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
 </font>
-</div>
+</div><!-- #desktopcereal .left -->
+
 <div id="description" class="right">
-<h1>Cereal & Code</h1>
+    <h2>What is Cereal & Code</h2>
+    <p>
+        Cereal & Code is a saturday morning for hackers to hack, with
+        the bestest cereal buffet of your dreams, and some throwback
+        cartoons like Tom & Jerry, Pinky and the Brain, and Wile E
+        Coyote playing on a projector.
+    </p>
 
-<h2>What is Cereal & Code</h2>
-<p>
-Cereal & Code is a saturday morning for hackers to hack, with
-the bestest cereal buffet of your dreams, and some throwback
-cartoons like Tom & Jerry, Pinky and the Brain, and Wile E
-Coyote playing on a projector.
-</p>
+    <p style="font-weight: bold;">
+        It's the grown up version of hackers watching saturday morning
+        cartoons.
+    </p>
 
-<p style="font-weight: bold;">
-It's the grown up version of hackers watching saturday morning
-cartoons.
-</p>
+    <h2>What Will I Do?</h2>
+    <p>
+        Hacking, in this context, is actually building stuff. That
+        can be developers, designer, UX folk. It's not "Hey I got a
+        great idea and maybe a nerd will build it for me".
+    </p>
+    <p>
+        There seem to be a lot of events for startup people to meet,
+        but sometimes hackers just need to get shit done. It's more fun
+        to do it with a bowl of Frosted Flakes, throwback cartoons, and
+        a room full of people who might already know how to solve that
+        Node.js problem that is crushing you right now.
+    </p>
+    <h2>How Do I Know If Should I Come?</h2>
+    <p>
+        If you build stuff, have something to work on, like humans,
+        and like cereal or cartoons, you should come.
+    </p>
+    <p>
+        Cereal and code is an event where hackers get together to work
+        on whatever they want to work on -- personal projects, your
+        part time startup, your full time startup, toying with a new
+        framework, etc. Whatever it is, the ONLY stipulation is that
+        you BUILD things.
+    </p>
+    <p>
+        Cereal and code is, hopefully, an event where people come, sit
+        down, and get a lot of work done.  Hopefully you'll meet other
+        cool hackers who might be able to help you as you hack. We want
+        you to meet cool people, but it is an event for you to work, not
+        to recruit.
+    </p>
 
-<h2>What Will I Do?</h2>
+    <h2>WHERE?!?!!?</h2>
+    <p>
+        <strong>Venture SHOT</strong>
+        <br />
+        <br />
+        744 N Wells<br />
+        Chicago IL 60654
+    </p>
+</div><!-- #description .right -->
 
-<p>
-Hacking, in this context, is actually building stuff. That
-can be developers, designer, UX folk. It's not "Hey I got a
-great idea and maybe a nerd will build it for me".
-</p>
-
-<p>
-There seem to be a lot of events for startup people to meet,
-but sometimes hackers just need to get shit done. It's more fun
-to do it with a bowl of Frosted Flakes, throwback cartoons, and
-a room full of people who might already know how to solve that
-Node.js problem that is crushing you right now.
-</p>
-
-<h2>How Do I Know If Should I Come?</h2>
-
-<p>If you build stuff, have something to work on, like humans,
-and like cereal or cartoons, you should come</p>
-
-<p>
-Cereal and code is an event where hackers get together to work
-on whatever they want to work on -- personal projects, your
-part time startup, your full time startup, toying with a new
-framework, etc. Whatever it is, the ONLY stipulation is that
-you BUILD things.
-</p>
-
-<p>
-Cereal and code is, hopefully, an event where people come, sit
-down, and get a lot of work done.  Hopefully you'll meet other
-cool hackers who might be able to help you as you hack. We want
-you to meet cool people, but it is an event for you to work, not
-to recruit.
-</p>
-
-<h2>WHERE?!?!!?</h2>
-<p>
-<strong>Venture SHOT</strong>
-<br />
-<br />
-744 N Wells<br />
-Chicago IL 60654
-</p>
-
-</div>
 <div class="left">
-<h2>How Much, Ya Greedy Bastards?</h2>
-<p>
-We're not trying to make any money on this, but we're taking a
-<strong>5 bucks</strong> to cover the cost of cereal, milk, and we'll
-kick back the meager leftovers to the owners of the space who
-have so graciously let us use their office.
-</p>
+    <h2>How Much, Ya Greedy Bastards?</h2>
+    <p>
+        We're not trying to make any money on this, but we're taking a
+        <strong>5 bucks</strong> to cover the cost of cereal, milk, and we'll
+        kick back the meager leftovers to the owners of the space who
+        have so graciously let us use their office.
+    </p>
+    <p>
+        The Venture Shot Space is limited, so there are only 50 seats.
+    </p> 
+    <p>
+        Sign up with <a href="http://www.eventbrite.com"><img id="eventbritelogo" src="http://ebmedia.eventbrite.com/s3-build/10623-rc10-01-5f19c4f/django/images/logos/eb_home_tm-trans.png"></a>
+    </p>
 
-<p>
-The Venture Shot Space is limited, so there are only 50 seats.
-</p>
-<p>
-Sign up with <a href="http://www.eventbrite.com"><img id="eventbritelogo" src="http://ebmedia.eventbrite.com/s3-build/10623-rc10-01-5f19c4f/django/images/logos/eb_home_tm-trans.png"></a> Seriously. Do it. NOW!
-</p>
-
-<p>
-Join the mailing list to stay in the loop for our next event.
-We promise we will spam you.
-</p>
-<form>
-<input></input>
-<input type="submit" value="I love spam!"></input>
-</form>
+    <h2>All Your <strike>Base</strike> <u>Email</u> Are Belong To Us</h2>
+    <p>
+        Join the mailing list to stay in the loop for our next event.
+        We promise we will spam you.
+    </p>
+    <form>
+<!--
+        <input placeholder="Your email address"></input>
+-->
 
 
+<div id="whythefuckdoibotherwiththiscrap" class="clearfix">
+    <div id="prompt">
+        <div>Type Your Email Here /></div><!-- being lazy, don't want to style, so nesting divs to match padding -->
+    </div>
+    <div id="cmd">
+        <span></span>
+        <div id="cursor"></div>
+    </div>
 </div>
+<br />
 
-</body></html>
+<input id="command" type="text" name="command" value="" />
+<input type="submit" value="I love spam!"></input>
+
+    </form>
+</div><!-- .left -->
+
+<div id="footercontainer">
+<div id="footer">
+<img src="/images/cartoons/bugsbunny.jpg" />
+<img src="/images/cartoons/jetsons.jpg" />
+<img src="/images/cartoons/tomandjerry.jpg" />
+<img src="/images/cartoons/wileecoyote.jpg" />
+<img src="/images/cartoons/inspectorgadget.jpg" />
+<img src="/images/cartoons/batman.jpg" />
+<img src="/images/cartoons/daffyduck.jpg" />
+<img src="/images/cartoons/darkwingduck.jpg" />
+<img src="/images/cartoons/droopy.jpg" />
+<img src="/images/cartoons/ducktales.jpg" />
+<img src="/images/cartoons/elmerfudd.jpg" />
+<img src="/images/cartoons/fredflinstone.jpg" />
+<img src="/images/cartoons/heman_and_superman.jpg" />
+<img src="/images/cartoons/daphne.jpg" />
+<img src="/images/cartoons/dexter.jpg" />
+<img src="/images/cartoons/scoobydoo.jpg" />
+<img src="/images/cartoons/speedygonzales.jpg" />
+<img src="/images/cartoons/spiderman.jpg" />
+<img src="/images/cartoons/heman.jpg" />
+<img src="/images/cartoons/thetick.jpg" />
+<img src="/images/cartoons/thundercats.jpg" />
+<img src="/images/cartoons/babs.jpg" />
+</div><!-- #footer -->
+</div><!-- #footercontainer -->
+
+</body>
+</html>
