@@ -18,6 +18,10 @@ h2 {
     margin-top: 1.6em;
 }
 
+strong {
+    text-decoration: underline;
+}
+
 .left {
     float: left;
     width: 50%;
@@ -54,6 +58,9 @@ h2 {
     }
 }
 
+p.scrunched {
+    line-height: 0.3em;
+}
 input {
     padding: 5px;
     border: 1px solid #32FF17;
