@@ -126,6 +126,9 @@ input#ommand {
     height: 0;
     opacity: 0;
 }
+input#command {
+    margin-left:-9999px;
+}
 
 .clearfix:after {
     content: ".";
@@ -135,11 +138,9 @@ input#ommand {
     line-height: 0;
     height: 0;
 }
-.clearfix { display: inline-block;}
-
-
-
-
+.clearfix {
+    display: inline-block;
+}
 
 #footer {
     height: 76px;
