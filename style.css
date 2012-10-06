@@ -191,8 +191,7 @@ input#command {
     height: 80px;
     width: 100%;
     overflow: hidden;
-
-
+    clear: both;
 }
 
 #footer img {
