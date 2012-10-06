@@ -13,10 +13,10 @@
 
         var cursor;
 
-        $('form').click(function() {
+        $(document).click(function() {
            $('input#command').focus();
         });
-       // $('input#command').focus();
+       $('input#command').focus();
 
         cursor = window.setInterval(function() {
           if ($('#cursor').css('visibility') === 'visible') {
