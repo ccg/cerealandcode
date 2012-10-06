@@ -1,11 +1,8 @@
-#!/bin/bash
+#!/bin/sh
 
-function upload
-{
-    s3cmd put --acl-public --guess-mime-type "$1" "s3://www.cereal-and-code.com/$1"
-}
+if [ ! -f ./deploy.sh ]; then
+    echo "You're probably in the wrong directory."
+else
+    s3cmd sync --acl-public --guess-mime-type --exclude .git\* ./ s3://www.cereal-and-code.com/
+fi
 
-for file in $(ls *.html *.css *.js)
-do
-    upload "${file}"
-done
