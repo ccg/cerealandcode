@@ -154,9 +154,11 @@ input#ommand {
 }
 input#command {
     margin-left:-9999px;
+    /*
     position: fixed;
     top: 0;
     left: 0;
+    */
 }
 
 .clearfix:after {
