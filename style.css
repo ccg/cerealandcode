@@ -116,6 +116,7 @@ input[type=submit]:hover {
 }
 
 #cmd {
+    cursor: text;
     font-family: courier;
     font-size: 14px;
     background: black;
