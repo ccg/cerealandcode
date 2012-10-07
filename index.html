@@ -43,6 +43,17 @@
 
         });
     </script>
+    <script>
+        //mailchimp
+        $(document).ready(function() {
+            $("form#mc-embedded-subscribe-form").submit(function(e) {
+                $(".mc_pre_subscribe").hide();
+                $(".mc_post_subscribe").fadeIn();
+                // e.preventDefault();
+                // return false;
+            });
+        });
+    </script>
 
 
 </head>
@@ -212,7 +223,7 @@
     </p>
 
 <!-- Begin MailChimp Signup Form -->
-<div id="mc_embed_signup">
+<div id="mc_embed_signup" class="mc_pre_subscribe">
     <form action="http://cereal-and-code.us6.list-manage2.com/subscribe/post?u=120d880b94719194e6f6b6fd2&amp;id=3e7bf1f9f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
         <div class="mc-field-group">
             <div id="whythefuckdoibotherwiththiscrap" class="clearfix">
@@ -230,10 +241,15 @@
             <div class="response" id="mce-error-response" style="display:none"></div>
             <div class="response" id="mce-success-response" style="display:none"></div>
         </div>
-        <div class="clear">
+        <div class="clear" id="submit-button-container-WTF">
             <input type="submit" value="I love spam!" name="subscribe" id="mc-embedded-subscribe" class="button">
         </div>
     </form>
+</div>
+
+<div class="mc_post_subscribe" style="display:none">
+    <p>Thank you for surrendering your personal information to us!</p>
+    <p>We will abuse it accordingly. =)</p>
 </div>
 
 <!--End mc_embed_signup-->

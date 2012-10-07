@@ -196,3 +196,9 @@ img.full-width {
     padding-bottom: 3px;
 
 }
+div.mc_post_subscribe,
+div#mc_embed_signup,
+.mc-field-group,
+#submit-button-container-WTF {
+    padding-left: 0px;
+}
